@@ -14,4 +14,5 @@ type Food struct {
 	ID       string
 	Price    int
 	Describe string
+	haha     string
 }
