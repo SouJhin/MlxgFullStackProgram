@@ -21,5 +21,8 @@ func main() {
 	// 	r.Run()
 	fmt.Printf("\"hello\": %v\n", "hello")
 	r := gin.Default()
-	r.Run()
+	err := r.Run()
+	if err != nil {
+		return
+	}
 }
