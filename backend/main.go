@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"backend/router"
+)
 
 func main() {
-	fmt.Printf("\"hello\": %v\n", "hello")
+	r := router.Router()
+	err := r.Run()
+	if err != nil {
+		return
+	}
 }

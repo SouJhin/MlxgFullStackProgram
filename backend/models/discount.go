@@ -1,4 +1,4 @@
-package model
+package models
 
 type Discount struct {
 	StartTime     string

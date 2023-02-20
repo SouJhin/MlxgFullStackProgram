@@ -7,5 +7,7 @@ import (
 )
 
 func Log(ctx *gin.Context) {
-	ctx.String(http.StatusOK, "service log")
+	ctx.JSON(http.StatusOK, gin.H{
+		"message": "fuck u",
+	})
 }
