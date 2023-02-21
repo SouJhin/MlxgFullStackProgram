@@ -3,5 +3,52 @@
     "info": {
         "contact": {}
     },
-    "paths": {}
+    "paths": {
+        "/addFood": {
+            "get": {
+                "tags": [
+                    "添加食物"
+                ],
+                "summary": "传入食物名称和价格",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "请输入食物名称",
+                        "name": "name",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "请输入食物价格",
+                        "name": "size",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/deleteFood": {
+            "post": {
+                "tags": [
+                    "删除食物"
+                ],
+                "summary": "传入吧",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "页数",
+                        "name": "size",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "页码",
+                        "name": "page",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    }
 }

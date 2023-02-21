@@ -1,4 +1,34 @@
 info:
   contact: {}
-paths: {}
+paths:
+  /addFood:
+    get:
+      parameters:
+      - description: 请输入食物名称
+        in: query
+        name: name
+        type: string
+      - description: 请输入食物价格
+        in: query
+        name: size
+        type: integer
+      responses: {}
+      summary: 传入食物名称和价格
+      tags:
+      - 添加食物
+  /deleteFood:
+    post:
+      parameters:
+      - description: 页数
+        in: query
+        name: size
+        type: integer
+      - description: 页码
+        in: query
+        name: page
+        type: integer
+      responses: {}
+      summary: 传入吧
+      tags:
+      - 删除食物
 swagger: "2.0"

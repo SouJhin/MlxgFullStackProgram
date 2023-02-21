@@ -1,5 +1,7 @@
 package models
 
+import "fmt"
+
 type Food struct {
 	Image    string
 	Name     string
@@ -16,7 +18,14 @@ func InsetFood(name string, price int) string {
 		Price:    price,
 		Describe: "youde",
 	}
-	_, err := Init().Insert(&food)
+	engine := Init()
+	_, err := engine.Insert(&food)
+	findFood := make([]Food, 0)
+	err = engine.Find(&findFood)
+	for _, value := range findFood {
+		fmt.Printf("food ====> %v\n", value)
+	}
+	fmt.Printf("summary %v\n\n", findFood)
 	if err != nil {
 		return ""
 	}
