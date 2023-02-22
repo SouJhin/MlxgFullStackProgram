@@ -1,0 +1,40 @@
+package models
+
+type Member struct {
+	StoreId         string
+	mobilePhone     string
+	nickname        string
+	avatar          string
+	country         string
+	cardName        string
+	memberLevel     uint
+	city            string
+	cardNo          string
+	openingCardDate string
+	customerId      string
+	district        string
+	unionId         string
+	address         string
+	storeName       string
+	gender          uint
+	province        string
+	memberOrigin    string
+	username        string
+	memberLevelName string
+	birthday        string
+	pointNum        int
+	couponNum       int
+	rechargeBalance string
+	balance         float64
+	giftBalance     float64
+	ExpenseAmount   string
+	conditionType   uint
+	ruleList        string
+	expiredTime     string
+	currentValue    int
+	level           int
+	cardUrl         string
+	needValue       int
+	cardName        string
+	Max             bool
+}

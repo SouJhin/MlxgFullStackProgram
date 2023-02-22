@@ -21,9 +21,31 @@ func AddFood(ctx *gin.Context) {
 	name := ctx.DefaultQuery("name", define.DefaultPage)
 	price := ctx.DefaultQuery("price", define.DefaultPrice)
 	convertPrice, _ := strconv.Atoi(price)
-	models.InsetFood(name, convertPrice)
+	food := models.Food{
+		Image:    "asdasd",
+		Name:     name,
+		ID:       "sssss",
+		Price:    convertPrice,
+		Describe: "youde",
+	}
+	engine := models.Init()
+	_, err := engine.Insert(&food)
+	findFood := make([]models.Food, 0)
+	err = engine.Find(&findFood)
+	for _, value := range findFood {
+		fmt.Printf("food ====> %v\n", value)
+	}
+	fmt.Printf("summary %v\n\n", findFood)
+	if err != nil {
+		return
+	}
 	ctx.JSON(http.StatusOK, gin.H{
-		"success": true,
+		"code": 200,
+		"data": map[string]interface{}{
+			"data":  findFood,
+			"name":  name,
+			"price": convertPrice,
+		},
 	})
 }
 
@@ -35,5 +57,6 @@ func AddFood(ctx *gin.Context) {
 // Success 200 {string} json "{"code":"200", "msg", "data":""}"
 // @Router /deleteFood [post]
 func DeleteFood() {
+	fmt.Printf("1 =====> 🚀🚀🚀 %v\n", 1)
 	fmt.Printf("1 =====> 🚀🚀🚀 %v\n", 1)
 }
