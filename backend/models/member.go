@@ -35,6 +35,5 @@ type Member struct {
 	level           int
 	cardUrl         string
 	needValue       int
-	cardName        string
 	Max             bool
 }

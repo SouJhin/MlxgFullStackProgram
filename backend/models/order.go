@@ -1,5 +1,7 @@
 package models
 
+import "time"
+
 type store struct {
 	Address   string
 	Longitude string
@@ -26,8 +28,8 @@ type Order struct {
 	PayUserName   string
 	UpdatedAt     string
 	GoodsNum      int
-	CompletedAt   string
-	CreatedAt     string
+	CompletedAt   time.Time
+	CreatedAt     time.Time `xorm:"created"`
 	InvoiceStatus uint
 	SentTime      uint
 	StatusText    string
